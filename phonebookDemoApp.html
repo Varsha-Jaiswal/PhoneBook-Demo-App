@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact Details - PhoneBook</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<script src="js/bootstrap.js"></script>
+  	<link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron">
+			<h2>Your Contact Details</h2><br>
+			<form id="ContactForm">
+				<div>
+					<label>Name</label> 
+					<input type="text" class="form-control" id="name" placeholder="Enter your name"><br><br>
+				</div>
+				<div>
+					<label>Mobile Number</label>
+					<input type="number" class="form-control" id="mobile" placeholder="Enter your mobile number"><br><br>
+				</div>
+				<div>
+					<label>Email Address</label>
+					<input type="email" class="form-control" id="email" placeholder="Enter your email address"><br><br>
+				</div>
+				<div>
+					<label>City</label>
+					<input type="text" class="form-control" id="city" placeholder="Enter your city"><br><br>
+				</div>
+			</form>
+			<center>
+				<button class="btn btn-primary" id='button'>Submit</button>
+			</center>
+		</div>
+		<div id="displayContact" class="card"></div>
+		<br><br>
+	</div>
+	<script>
+		document.getElementById('button').addEventListener('click', SubmitForm);
+		function SubmitForm() {
+			var name = document.getElementById('name').value;
+			var mobile = document.getElementById('mobile').value;
+			var email = document.getElementById('email').value;
+			var city = document.getElementById('city').value;
+
+			document.getElementById('displayContact').innerHTML += '<div class="card-block"><br>'+
+															'<h3 class="card-title">&nbsp;'+name+'</h3>'+
+															'<br>'+
+															'<ul class="card-text">'+
+															'<li>'+mobile+'</li><br>'+
+															'<li>'+email+'</li><br>'+
+															'<li>'+city+'</li></ul>'+
+															'<br><br>'+
+															'</div>';
+		}
+	</script>
+</body>
+</html>
